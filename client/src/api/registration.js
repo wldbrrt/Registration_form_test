@@ -5,8 +5,6 @@ export const sendUserData = async (user) => {
       "Content-Type": "application/json;charset=utf-8",
     },
     body: JSON.stringify(user),
-  })
-    .then((res) => res.json())
-    .catch((err) => err);
+  }).then((res) => res.json());
   return response;
 };

@@ -16,7 +16,7 @@
   position: relative;
   margin: 0 auto;
   min-height: 200vh;
-  padding-right: calc(-1 * (100vw - 100%));
+  margin-right: calc(-1 * (100vw - 100%));
   overflow-x: hidden;
 
   &::after {
