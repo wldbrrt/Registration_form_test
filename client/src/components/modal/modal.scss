@@ -1,0 +1,283 @@
+@import "../../variables.scss";
+
+.modal__wrapper {
+  display: flex;
+  justify-content: flex-end;
+
+  .modal__container {
+    width: 500px;
+    height: 100vh;
+    border-right: none;
+    position: fixed;
+    background: radial-gradient(
+      78.87% 44.9% at 50.1% 56.18%,
+      #f6d5a4 0%,
+      rgba(217, 217, 217, 0.19) 97.18%
+    );
+    background-color: $COLOR_MAIN_WHITE;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0 0 40px;
+    top: 0;
+    right: -100%;
+    z-index: 4;
+    transition: 500ms;
+
+    &::before {
+      content: "";
+      width: 2px;
+      height: 80%;
+      position: absolute;
+      background-color: black;
+      top: 5%;
+      left: 10%;
+    }
+
+    .modal__buttonwrapper {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+    }
+
+    .modal__buttoncontainer {
+      position: relative;
+      width: 82px;
+      height: 82px;
+      background-color: $COLOR_MAIN_BEIGE;
+
+      .modal__button {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background: none;
+        border: none;
+        z-index: 3;
+        background-color: $COLOR_MAIN_BLACK;
+        bottom: 0;
+        right: 0;
+
+        .modal__lines {
+          position: relative;
+          display: block;
+          height: 0px;
+          background-color: white;
+          border-radius: 2px;
+          width: 35px;
+
+          &::before {
+            content: "";
+            width: 35px;
+            position: absolute;
+            top: -9px;
+            left: 0;
+            transition: 200ms;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            top: -1px;
+            left: 0px;
+            transform: rotate(135deg);
+          }
+
+          &::after {
+            content: "";
+            width: 35px;
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+            transition: 200ms;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            bottom: -2px;
+            left: 0px;
+            transform: rotate(-135deg);
+          }
+        }
+      }
+    }
+
+    .modal__title {
+      @include titleh2;
+      background-color: $COLOR_MAIN_BEIGE;
+      max-width: 90%;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal__title_modified {
+      @include titleAdditional;
+      position: absolute;
+      top: -64px;
+    }
+
+    .modal__content {
+      font-size: 20px;
+      color: $COLOR_MAIN_BLACK;
+      font-family: Jura;
+    }
+  }
+
+  .modal__container_active {
+    right: 0;
+  }
+
+  .burgermenu__buttoncontainer {
+    position: relative;
+    width: 82px;
+    height: 82px;
+    background-color: $COLOR_MAIN_BEIGE;
+
+    .burgermenu__button {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: none;
+      border: none;
+      z-index: 3;
+      background-color: $COLOR_MAIN_BLACK;
+      bottom: 0;
+      right: 0;
+
+      .burgermenu__lines {
+        position: relative;
+        display: block;
+        height: 3px;
+        background-color: white;
+        border-radius: 2px;
+        width: 35px;
+
+        &::before {
+          content: "";
+          width: 35px;
+          position: absolute;
+          top: -9px;
+          left: 0;
+          transition: 200ms;
+          height: 3px;
+          background-color: white;
+          border-radius: 2px;
+        }
+
+        &::after {
+          content: "";
+          width: 35px;
+          position: absolute;
+          bottom: -9px;
+          left: 0;
+          transition: 200ms;
+          height: 3px;
+          background-color: white;
+          border-radius: 2px;
+        }
+      }
+
+      .burgermenu__lines_active {
+        position: relative;
+        height: 0px;
+        display: block;
+        width: 35px;
+        transform: rotate(180deg);
+
+        &::before {
+          content: "";
+          width: 35px;
+          height: 3px;
+          position: absolute;
+          top: -1px;
+          left: 0px;
+          transform: rotate(135deg);
+        }
+
+        &::after {
+          content: "";
+          width: 35px;
+          height: 3px;
+          position: absolute;
+          bottom: -2px;
+          left: 0px;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
+}
+
+.circle__wrapper {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  //border: 5px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .circle__item {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    border: 5px solid black;
+    border-radius: 50%;
+    top: -5px;
+    left: -5px;
+
+    justify-content: center;
+    position: absolute;
+  }
+
+  .circle__center {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid black;
+  }
+
+  .circle__one {
+    animation: circles 5s infinite linear;
+  }
+  .circle__two {
+    animation: circles 5s infinite linear;
+    animation-delay: 1s;
+  }
+  .circle__three {
+    animation: circles 5s infinite linear;
+    animation-delay: 2s;
+  }
+  .circle__four {
+    animation: circles 5s infinite linear;
+    animation-delay: 3s;
+  }
+  .circle__five {
+    animation: circles 5s infinite linear;
+    animation-delay: 4s;
+  }
+}
+
+@keyframes circles {
+  from {
+    transform: scale(0.1);
+    opacity: 6;
+    display: none;
+  }
+  to {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.modal__imagecontainer {
+  position: relative;
+  height: 500px;
+  .modal__eyescontainer {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    top: 55px;
+    left: 144px;
+  }
+  .modal__img {
+    height: 100%;
+  }
+}

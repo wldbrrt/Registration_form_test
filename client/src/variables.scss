@@ -1,0 +1,57 @@
+$COLOR_MAIN_BLACK: #000;
+$COLOR_MAIN_WHITE: #fff;
+$COLOR_MAIN_BEIGE: #f6d5a4;
+$COLOR_ADDITIONAL_ORANGE: #d7860f;
+$COLOR_ADDITIONAL_ERROR: #f6d5a482;
+
+@mixin titleh2 {
+  color: #000;
+  font-family: Jura;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0 0;
+}
+
+@mixin titleAdditional {
+  color: $COLOR_MAIN_BLACK;
+  font-family: Just Me Again Down Here;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+@mixin placeholder {
+  font-family: Jura;
+  color: $COLOR_MAIN_BLACK;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+@mixin errorMessage {
+  color: $COLOR_ADDITIONAL_ORANGE;
+  font-family: Jura;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+@mixin button {
+  color: $COLOR_MAIN_WHITE;
+  font-family: Jura;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: lowercase;
+  background-color: $COLOR_MAIN_BLACK;
+}

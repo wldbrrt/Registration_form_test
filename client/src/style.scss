@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&family=Jura:wght@300;400;500;600;700&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Rationale&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Gruppo&family=Jura:wght@300;400;500;600;700&family=Just+Me+Again+Down+Here&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Rationale&display=swap");
+
+.body {
+  background: linear-gradient(
+    113deg,
+    rgba(246, 213, 164, 0.8) 0%,
+    rgba(245, 229, 205, 0.45) 26.04%,
+    rgba(245, 245, 245, 0) 48.91%,
+    rgba(245, 230, 207, 0.45) 73.96%,
+    rgba(246, 213, 164, 0.8) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 0;
+  min-height: 200vh;
+  margin-right: calc(-1 * (100vw - 100%));
+  overflow-x: hidden;
+
+  &::after {
+    content: "";
+    transition: 200ms;
+  }
+
+  .header {
+    max-width: 1600px;
+    padding: 20px 50px;
+  }
+}
+
+.body_scroll-disabled {
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #80808070;
+    top: 0;
+    left: 0;
+  }
+}
